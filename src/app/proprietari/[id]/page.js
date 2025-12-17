@@ -61,9 +61,19 @@ export default async function DettaglioProprietario({ params }) {
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-bold text-bbro-foreground uppercase tracking-wide mb-1">Telefono</label>
-              <input name="telefono" defaultValue={p.telefono || ''} className="w-full p-2 border border-bbro-foreground/20 rounded-sm focus:border-bbro-element-light focus:outline-none text-bbro-element-dark" />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-bbro-foreground uppercase tracking-wide mb-1">Telefono</label>
+                <input name="telefono" defaultValue={p.telefono || ''} className="w-full p-2 border border-bbro-foreground/20 rounded-sm focus:border-bbro-element-light focus:outline-none text-bbro-element-dark" />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-bbro-foreground uppercase tracking-wide mb-1">Stato</label>
+                <select name="stato" defaultValue={p.stato || 'TRATTATIVA'} className="w-full p-2 border border-bbro-foreground/20 rounded-sm focus:border-bbro-element-light focus:outline-none text-bbro-element-dark bg-white">
+                  <option value="TRATTATIVA">🔴 In Trattativa</option>
+                  <option value="DA_COMPLETARE">🟡 Da Completare</option>
+                  <option value="COMPLETO">🟢 Completo</option>
+                </select>
+              </div>
             </div>
 
             <div>

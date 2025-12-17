@@ -116,6 +116,7 @@ export async function aggiornaProprietario(formData) {
       codiceFiscale: formData.get('codiceFiscale'),
       telefono: formData.get('telefono'),
       emailPersonale: formData.get('emailPersonale'),
+      stato: formData.get('stato'),
 
       // Credenziali
       googleEmail: formData.get('googleEmail'),

@@ -18,6 +18,7 @@ model Proprietario {
   emailPersonale  String?
   docIdentita     String?
   codiceFiscale   String?  // Nuovo campo
+  stato           String   @default("TRATTATIVA") // TRATTATIVA, DA_COMPLETARE, COMPLETO
 
   // Credenziali Generate
   googleEmail     String?

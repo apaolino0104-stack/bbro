@@ -48,7 +48,14 @@ export default async function Home() {
                 {/* Testata Card: SFONDO SCURO (#241d16) */}
                 <div className="bg-bbro-element-dark p-4 border-b border-bbro-element-light/50 group-hover:bg-black transition">
                   <div className="flex justify-between items-center">
-                    <h2 className="text-lg font-semibold text-white tracking-wide">{p.nome} {p.cognome}</h2>
+                    <div>
+                      <h2 className="text-lg font-semibold text-white tracking-wide">{p.nome} {p.cognome}</h2>
+                      <div className="mt-1">
+                        {p.stato === 'TRATTATIVA' && <span className="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">In Trattativa</span>}
+                        {p.stato === 'DA_COMPLETARE' && <span className="bg-yellow-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Da Completare</span>}
+                        {p.stato === 'COMPLETO' && <span className="bg-green-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Completo</span>}
+                      </div>
+                    </div>
                     {/* SCRITTA ORO */}
                     <span className="text-bbro-element-light opacity-0 group-hover:opacity-100 text-xs font-bold transition tracking-widest">APRI</span>
                   </div>
