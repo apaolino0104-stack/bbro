@@ -3,6 +3,7 @@ import prisma from '@/lib/db';
 import Link from 'next/link';
 import { aggiornaProprietario, uploadDocumento, eliminaDocumento } from '@/app/actions';
 import { createClient } from '@supabase/supabase-js';
+import Image from 'next/image';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -180,7 +181,13 @@ export default async function DettaglioProprietario({ params }) {
                 <div key={doc.id} className="relative group border border-gray-200 rounded-sm p-4 text-center hover:border-bbro-element-light transition">
                   <div className="h-24 flex items-center justify-center mb-2 bg-gray-50 rounded-sm overflow-hidden">
                     {doc.tipo === 'IMG' ? (
-                      <img src={doc.signedUrl} alt={doc.nome} className="object-cover h-full w-full opacity-80 group-hover:opacity-100 transition" />
+                      <Image
+                        src={doc.signedUrl}
+                        alt={doc.nome}
+                        fill
+                        className="object-cover opacity-80 group-hover:opacity-100 transition"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
                     ) : (
                       <span className="text-4xl text-gray-400">📄</span>
                     )}

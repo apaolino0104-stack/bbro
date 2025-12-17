@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.87.3",
     "adm-zip": "^0.5.16",
     "form-data": "^4.0.5",
